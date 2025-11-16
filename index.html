@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio de Times - Counter Strike 5v5</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body class="text-white">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="header rounded-xl mb-8 p-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">Sorteio de Times</h1>
+            <p class="text-xl text-gray-300">Counter Strike 5v5</p>
+            <div class="mt-4 flex justify-center">
+                <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-yellow-500 rounded-full"></div>
+            </div>
+        </header>
+
+        <!-- Input Section -->
+        <section class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 mb-8 shadow-2xl">
+            <h2 class="text-2xl font-bold mb-4 text-center">Insira o nome do corno</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div>
+                    <label class="block text-lg font-medium mb-2">Nome do newba</label>
+                    <input type="text" id="playerName" placeholder="Digite o nome do jogador..." 
+                           class="input-field w-full p-3 rounded-lg bg-gray-700/50 text-black focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-lg font-medium mb-2">Tier do cidadão</label>
+                    <select id="playerLevel" class="input-field w-full p-3 rounded-lg bg-gray-700/50 text-black focus:outline-none">
+                        <option value="">Seleciona o sofrimento dele...</option>
+                        <option value="khaz">khaz</option>
+                        <option value="bom">bom</option>
+                        <option value="da pra jogar">da pra jogar</option>
+                        <option value="ruim">ruim</option>
+                        <option value="a natureza cuida">a natureza cuida</option>
+                        <option value="felps pnjoento">felps pnojoento</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-end">
+                    <button id="addPlayerBtn" class="btn-primary w-full py-3 px-4 rounded-lg font-bold text-lg">
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3">Nome dos Limitados (<span id="playersCount">0</span>)</h3>
+                <div id="playersList" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 min-h-[80px]">
+                    <!-- Players will be added here dynamically -->
+                    <div class="text-gray-400 italic text-center py-4">Nenhum jogador adicionado ainda</div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <button id="drawTeamsBtn" class="btn-primary py-3 px-8 rounded-lg font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed pulse">
+                    Sortear Times (Reze para não cair com o gui3d)
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="hidden bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-2xl">
+            <h2 class="text-2xl font-bold mb-6 text-center">Times Sorteados</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="team-card bg-gradient-to-br from-blue-900/70 to-blue-700/50 p-6 rounded-xl border border-blue-500/30">
+                    <h3 class="text-xl font-bold mb-4 text-center text-blue-300">Time 1</h3>
+                    <ul id="blueTeam" class="space-y-2">
+                        <!-- Blue team players will go here -->
+                    </ul>
+                </div>
+                
+                <div class="team-card bg-gradient-to-br from-red-900/70 to-red-700/50 p-6 rounded-xl border border-red-500/30">
+                    <h3 class="text-xl font-bold mb-4 text-center text-red-300">Time 2</h3>
+                    <ul id="redTeam" class="space-y-2">
+                        <!-- Red team players will go here -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button id="redoDrawBtn" class="btn-primary py-2 px-6 rounded-lg font-bold">
+                    Refazer Sorteio
+                </button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
