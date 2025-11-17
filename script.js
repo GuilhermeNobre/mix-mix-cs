@@ -13,12 +13,12 @@
         const blueTeam = document.getElementById('blueTeam');
         const redTeam = document.getElementById('redTeam');
         const levelWeights = {
-            'khaz': 6,
-            'bom': 5,
-            'da pra jogar': 4,
-            'ruim': 3,
-            'a natureza cuida': 2,
-            'felps pnjoento': 1
+            'S': 6,
+            'A': 5,
+            'B': 4,
+            'C': 3,
+            'D': 2,
+            'E': 1
         };
 
         // Add player function
@@ -69,7 +69,7 @@
                 const playerElement = document.createElement('div');
                 playerElement.className = 'player-item bg-gray-700/50 p-3 rounded-lg flex justify-between items-center animate-fadeIn';
                 playerElement.innerHTML = `
-                    <span>${player.name} <span class="text-gray-300 text-sm">(${player.level})</span></span>
+                    <span class="text-lg font-bold">${player.name} <span class="text-white-300 text-sm">(${player.level})</span></span>
                     <button onclick="removePlayer(${index})" class="text-red-400 hover:text-red-300">&times;</button>
                 `;
                 playersList.appendChild(playerElement);
